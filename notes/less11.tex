@@ -1,0 +1,35 @@
+\lecture{11}{20 nov 25}{Teoria do Momento Angular}
+
+\section{Teoria do Momento Angular}
+
+\subsection{Rotações e Revelações de Comutação de Momento Angular}
+
+\subsubsection{Rotações infinitesimais versus rotações finitas}
+
+Rotações em torno do mesmo eixo comutam, ao passo que aquelas em torno
+de eixos diferentes não comutam. Para compreender o que é dito, vamos
+usar a representação das rotações em três dimensões usando matrizes
+3x3 reais e ortogonais.
+
+Considere um vetor $\mathbf{V}$ de componentes $(V_x, V_y, V_z)$ e uma
+matriz $R$ que representa uma rotação em torno do eixo $z$, onde ao
+girarmos o vertor $\mathbf{V}$, as três componentes se transformam
+em um outro conjunto de números $(V_x', V_y', V_z')$. As matrizes de
+rotação estão relacionadas por uma matriz $\mathbf{R}$ 3x3 ortorgonal:
+
+\begin{equation}
+  \begin{pmatrix} V'_x \\ V'_y \\ V'_z \end{pmatrix} = \mathbf{R} \begin{pmatrix} V_x \\ V_y \\ V_z \end{pmatrix}
+\end{equation}
+
+\begin{equation}
+    RR^T = R^TR = I,
+\end{equation}
+
+onde $T$ é a transposta. A propriedade 
+
+\begin{equation}
+    \sqrt{V_x^2 + V_y^2 + V_z^2} = \sqrt{V_x'^2 + V_y'^2 + V_z'^2}
+\end{equation}
+
+das matrizes ortogonais é automaticamente satisfeita.
+

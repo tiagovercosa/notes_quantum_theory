@@ -1,0 +1,146 @@
+\lecture{10}{13 out 25}{Propagadores e Integrais de Caminho de Feynman}
+
+\section{As Integrais de Caminho de Feynman}
+\subsection{Integrais de caminho como a soma sobre caminhos}
+Trabalharemos com  $ \ket{x_1},\ket{x_2},...,\ket{x_n} $ para os \textit{kets}.
+Queremos calcular a amplitude de probabilidade de uma partícula quântica
+sair de  $ (x_1, t_1) $ para  $ (x_n,t_n) $. Para isso, vamos dividir o
+intervalo de tempo em  $ n-1 $ partes.
+$$
+t_{n+1}-t_n = \Delta t = \frac{t_{n}-t_{i}}{n-1}
+$$
+\begin{multline*}
+\braket{x_{n},t_{n} | x_{1},t_{1}}= \int dx_{n-1} \int dx_{n-2} \cdots \int dx_2 \\
+\braket{x_{n},t_{n} | x_{n-1}, t_{n-1}}\braket{ x_{n-1}, t_{n-1} | x_{n-2}, t_{n-2}} \dots \braket{x_{2},t_{2} |x_{1},t_{1}}  
+\end{multline*}
+
+A integração é realizada nos infinitos caminhos que ligam  $ (x_1, t_1) $ a
+$ (x_n, t_n) $, eses dois, fixos. A ação no caso clássico é dado por:
+$$
+S[x(t)] \triangleq \int_{t_0}^{t1} dt L(x,\dot{x}) \rightarrow S(n,n-1)=\int_{t_{n-1}}^{t_n}
+dt L(x,\dot{x})
+$$
+que é a ação clássica.
+
+A ação clássica é um funcional que dende da trajetória  $ S[x(t)] $.
+Proposta de Feynman à luz da ideia de Dirac. Associar
+$$
+\exp{\left(\frac{i}{\hbar}\int_{t_1}^{t_2} dt L(x,\dot{x}\right)}
+$$
+com  $ \langle x_2, t_2|x_1, t_1 \rangle $.  Para uma trajetória completa de 
+$ (x_1, t_1) $ a  $ (x_2, t_2) $
+
+\begin{multline*}
+	\prod_{n=2}^{n} \exp\left[\frac{i}{\hbar}S(n,n-1)\right] = \exp\left(
+	\sum_{n=L}^{N}\frac{i}{\hbar}S(n,n-1)\right) = \\
+	\exp\left[\frac{i}{\hbar}S(n,n-1)+S(N-1, N-2)+...\right] = 
+	\exp \left[\frac{i}{\hbar}S(N,1)\right]
+\end{multline*}
+
+Para calcular  $ \langle x_n, t_n | x_1, t_1 \rangle $ precisamos integrar
+sobre todas as trajetórias.
+
+$$
+\langle x_n, t_n | x_1, t_1 \rangle = \sum_{\substack{\text{``todos os} \\ \text{caminhos''}}}
+\exp\left(\frac{i}{\hbar} S(N,1) \right)
+$$
+
+Na mecânica quântica falta o princípio de Hamilton, que nos mostra que
+dentre todos os caminhos possíveis, um único relevante:  $ \delta S=0 $.
+Podemos obter o limite clássico $ (\hbar -> 0) $ a partir da expressão de
+Feynman?
+
+Quando $ S/\hbar \gg 1 $:
+$$
+\sum_{\substack{\text{``todos os} \\ \text{caminhos''}}} \rightarrow \sum_{\delta S=0}
+.$$
+No limite clássico a "interferência destrutiva`` gera os infinitos caminhos
+e passa a importar somente 1, o clássico
+$$
+  \delta S = 0.
+$$
+
+Consideremos a trajetória para qual  $ \delta S(N,1) = 0 $, com  $ (x_1,t_1) $ 
+e  $ (x_N, t_N) $ fixos. As trejatórias vizinhas tem a mesma ação associado
+em primeira ordem com interferência constutiva! Isso para os caminhos em um
+tubo de largura  $ \hbar $. No limite  $ \hbar -> 0 $, este tubo colapsa para 
+$ \delta S = 0 $,  que é a trajetória clássica!
+
+%TODO FIGURA!!!
+
+Escrevemos
+$$
+\langle x_n,t_n|x_{n-1},t_{n-1}\rangle = \frac{1}{W(\Delta t)}
+\exp \left[\frac{i}{\hbar} S(n,n-1) \right]
+$$
+Os fatos  $ W^{-1}(\Delta t) $ aparece incialmente por razões de análise
+dimensional. Vamos avaliar quem é  $ S(n,n-1) $, no limite  $ \Delta t -> 0 $ 
+$$
+S(n,n-1)=\int_{t_{n-1}}^{t_n}dt\left[ \frac{1}{2}m\dot{x}^2-V(x)\right]
+\approx \Delta t \left[\frac{m}{2}\left(\frac{x_n-x_{n-1}}{\Delta t}\right)^2
+-V\left(\frac{x_n+x_{x+1}}{2}\right)\right].
+$$
+
+Assumamos que  $ W(\Delta t) $ não depende do potencial. Escolhamos o 
+potencial mais simples, onde  $ v=0 $ (partícula livre).
+$$
+S(n,n-1) = \Delta t \frac{m}{2}\left(\frac{x_n - n_{n-1}}{2}\right)^2
+$$
+e
+$$
+%TODO: colocar snippet para fechamento matemático
+\langle x_n, t_n | x_1, t_1 \rangle = \frac{1}{W(\Delta t)} \exp \left\{
+\frac{i}{\hbar} \frac{m(x_n-x_{n-1})^2}{2\Delta t}\right\}.
+$$
+
+Obs.:$ \langle x_n, t_n | x_{n-1}, t_{n-1} \rangle |_{t_n = t_{n-1}} = \delta(x_n - x_{n-1})$
+
+$$
+x_n = x_{n-1} + \xi \text{ e } t_n = t_{n-1} + \Delta t  
+$$
+
+$$
+\langle x_{n-1} + \xi, t_{n-1} + \Delta t | x_{n-1}, t_{n-1} \rangle =
+\frac{1}{W(\Delta t)} \exp\left(\frac{im\xi^2}{2\hbar \Delta t}\right)
+$$
+
+integrar sobre todos os caminhos
+
+%TODO equação na imagem
+$$
+	\int_{-\infty}^{\infty} \braket{x_{n-1}+\xi, t_{n-1}+\Delta t | x_{n-1}, t_{n-1}} = \frac{1}{W(\Delta T)}
+	\int_{-\infty}^{\infty} d \xi \exp \left( \frac{im \xi^2}{2\hbar \Delta t} \right) = \\ 
+	\frac{1}{W( \Delta t)} \sqrt{\frac{2 \pi i \Delta t}{m}}
+$$
+
+$$
+ 1 = \frac{1}{W( \Delta t)} \sqrt{\frac{2 \pi i \Delta t}{m}}
+$$
+
+No limite $\Delta t\rightarrow 0 $ 
+$$
+\langle x_n, t_n|x_{n-1}, t_{n-1} \rangle = \sqrt{\frac{m}{2\pi i \hbar \Delta t}}
+\exp\left[ \frac{i}{\hbar}S(n,n-1) \right]
+$$
+Amplitude infinitesimal para:
+
+%TODO equação na imagem
+...
+
+\begin{itemize}
+	\item Princípio da Superposição;
+	\item Princípio da composição das amplitudes;
+	\item Satisfaz o princípio da correspondência $( \hbar -> 0)$
+	\item A expressão se reduz à equação de Schrödinger;
+\end{itemize}
+
+prova propagador de Feynman
+
+$ t_n - t_{n-1} = \Delta t $ infinitesimal
+
+$ x_n + x_{n-1} = \xi $ 
+$$
+\langle x_n, t_n | x_{n-1},t_{n-1} \rangle = \frac{m}{2\pi i\hbar \Delta t}
+\exp\left\{\frac{i}{\hbar}\left(\frac{m}{2}\left(\frac{x_n-x_{n-1}}{\Delta t}\right)^2
+	-\Delta t V\left( \frac{x_n + x_{n-1}}{2} \right)\right)\right\}
+$$.

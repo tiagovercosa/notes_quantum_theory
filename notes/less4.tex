@@ -1,0 +1,42 @@
+\lecture{04}{27 ago 25}{Formalismo Matemático}
+\subsection{Operadores}
+
+\textbf{Representação Matricial:} Na base em que $S_z$ é diagonal (a base dos 
+autoestados $|\pm\rangle$), a representação matricial do operador $S_z$ é dada por: 
+$$
+S_z \dot{\mathrel{=}} \frac{\hbar}{2} 
+\begin{pmatrix}
+1 & 0 \\ 
+0 & -1 
+\end{pmatrix}
+$$
+
+\subsubsection{Observáveis Compatíveis}
+Qual a relação entre os autovetores de  $ A $ e os autovetores de  $ B $ 
+quando os observáveis  $ A $ e  $ B $ são compatíveis? 
+Suponha que haja dois ou mais autovetores de  $ A $ linearmente independentes,
+mas que possuam os mesmo autovalores; nesse caso, diz-se que os autovalores
+destes dois autovetores são \textbf{degenerádos}.
+
+
+Usamos as propriedades dos autoestados de $A$. Lembre-se que:
+$$
+A|a'\rangle = a'|a'\rangle$$ $${\langle a''|A} = a'' {\langle a''|}
+$$
+(assumindo que $A$ é Hermitiano e seus autovalores $a'$ e $a''$ são reais).
+Ao expandir o elemento de matriz do comutador, obtém-se: 
+$$
+\langle a''|[A,B]|a'\rangle = \langle a''|AB|a'\rangle - \langle a''|BA|a'\rangle = 0
+$$
+Aplicando o operador $A$ aos seus autoestados correspondentes:
+$$
+\langle a''|A B|a'\rangle = a'' \langle a''|B|a'\rangle$$ $$\langle a''|B A|a'\rangle = \langle a''|B|a'\rangle a'
+$$
+Substituindo de volta na equação do comutador: 
+$$
+a'' \langle a''|B|a'\rangle - a' \langle a''|B|a'\rangle = 0
+$$Fatorando o elemento de matriz $\langle a''|B|a'\rangle$, chegamos à Equação (1.121):
+$$
+\mathbf{(a'' - a')\langle a''|B|a'\rangle = 0}
+$$
+

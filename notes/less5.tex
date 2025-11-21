@@ -1,0 +1,80 @@
+\lecture{05}{15 out 25}{Evolução temporal e equação de Schrödinger}
+
+\section{Evolução temporal e equação de Schrödinger}
+\subsection{Operador de evolução tempotal}
+
+Pergunta principal: Como o sistema muda por um deslocamento temporal  $t_{0}\rightarrow
+t$? 
+
+$$
+\ket{\alpha,t_{0}} = \ket{\alpha} \xrightarrow{\hspace{2em}} \ket{\alpha,t_{0}; t}
+.$$
+No caso de translação, os \textit{kets} acima estão relacionados por meio do operador
+$ \mathcal{U}(t,t_{0})$, denomidado \textbf{operador de evolução temporal}:
+\begin{equation}
+\ket{\alpha,t_{0}; t} = \mathcal{U}(t,t_{0})\ket{\alpha,t_{0}}.
+\label{op_evotemp}
+\end{equation}
+
+A primeira propriedade importante é a unitariedade de  $ \mathcal{U}(t,t_{0}) $, que
+vem da conservação da probabilidade. Suponhamos que em  $t_{0} $, o vetor de estado
+esteja expandido em termos de autovetores de algum observável  $ A $ :
+$$
+\ket{\alpha,t_{0}} = \sum_{a'}c_{a'}(t_{0})\ket{\alpha'}
+.$$
+Do mesmo modo, num tempo posterior temos:
+$$
+\ket{\alpha,t_{0}; t} = \sum_{a'}c_{a'}(t)\ket{\alpha'}
+.$$
+Em geral, não se espera que o módulos dos coeficientes sejam iguais,
+$$
+  |c_{a'}(t)| \neq |c_{a'}(t_{0})|
+.$$
+No entanto, se o Hamiltoniano comuta com  $ A $, esses realmente serão iguais.
+
+Se o \textit{ket} estava inicialmente normalizado em 1, ele deve permanecer normalizado
+para totos os tempos posteriores. Desse modo, por exemplo, quando o spin  $ 1/2 $ precessiona
+no eixo  $ xy $ ao passar por um campo magnético uniforme na direção  $ z $,
+a probabilidade de observar  $S_{x}+ $ não é mais 1 em  $ t >t_{0} $; há uma
+probalidade de se observar  $S_{x}+ $ e  $S_{x}- $. Mesmo assim, a soma das
+probabilidades de se observar  $S_{x}+ $ e  $S_{x}- $ permanece igual a 1 durante
+todo o tempo:
+$$
+\sum_{a'}|c_{a'}(t_{0})|^2 = \sum_{a'}|c_{a'}(t)|^2
+.$$
+Na notação de Dirac, tem-se
+$$
+  \braket{\alpha,t_{0} | \alpha,t_{0}} = 1 \Longrightarrow \braket{\alpha,t_{0}; t |
+	\alpha,t_{0}; t} = 1
+.$$
+
+Este condição será satisfeita se tomarmos o operador como sendo unitário. Por
+este motivo, teremos
+$$
+\mathcal{U}^\dag (t,t_{0})\mathcal{U}(t,t_{0}) = 1 
+,$$
+como sendo uma das propriedades funcamentais do operador  $ \mathcal{U} $, podendo
+tomar a unitariedade como sinônimo de conservação de probabilidade.
+
+Outra propriedade exigida para o operador  $ \mathcal{U} $ é a de composição,
+que consiste em obter a evolução temporal de  $t_{0} $ a  $t_{2} $, por meio de uma
+decomposição entre os tempos  $t_{0} $ a  $t_{1} $ e depois  $t_{1} $ a  $t_{2} $.
+Desse modo podemos escrever, devendo ser lida da direita para a esqueda!
+$$
+\mathcal{U}(t_{2},t_{0}) = \mathcal{U}(t_{2},t_{1})\mathcal{U}(t_{1},t_{0}), \qquad
+ (t_{2} >t_{1} >t_{0})
+.$$
+
+Também é conveniente considerar o operador evolução temporal infinitesimal
+$ \mathcal{U}(t_{0} + dt,t_{0}) $:
+$$
+\ket{\alpha,t_{0};t_{0}+dt} = \mathcal{U}(t_{0}+dt,t_{0})\ket{\alpha,t_{0}}
+.$$
+Devido a continuidade o operador de evolução temporal deve ser igual ao operador
+identidade quando  $ dt $ vai a zero:
+$$
+\lim_{dt \rightarrow 0} \mathcal{U}(t_{0}+dt,t_{0}) = 1
+.$$
+Observe que, isso é crucial para respeitar o caso em que o sistema não evolui no tempo,
+retornar o próprio  $ \ket{\alpha,t_{0}} $ na equação \ref{op_evotemp}.
+

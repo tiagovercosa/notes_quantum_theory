@@ -1,0 +1,210 @@
+\lecture{02}{22 ago 25}{Formalismo Matemático}
+\section{Ket's, Bra's e Operadores}
+
+A notação compacta da álgebra linear que foi desenvolvida por Dirac, o livro do
+Sakurai introduz essa notação. Primeiro ponto que ele destaca é, \textbf{qual a
+dimensão desse espaço de Hilbert?} Esse espaço pode ser
+
+\begin{itemize}
+    \item finito ou infinito;
+    \item contável ou não contável;
+    \item numerável ou não numerável;
+\end{itemize}
+
+A dimensão, em suma, depende do problema físico que queremos atacas e da grandeza
+física, sendo possível ter as duas situações ao mesmo tempo. Vejamos o exemplo 
+o problema da molécula de hidrogênio, pois em torno da posição de equilíbrio
+a energia é discreta e numerável, a medida que vai se aproximando do limite 
+superior do poço, tem-se contínuo (estado ligado) e não numerável.
+
+A teoria de espaços lineares era conhecida dos matemáticos muito antes do advento 
+da mecânica quântica, mas a maneira como Dirac introduz espaços vetoriais tem 
+muitas vantagens, em especial para os físicos.
+
+\subsection{Espaço dos kets}
+
+Consideremos um espaço vetorial complexo cuja dimensionalidade é especificada de
+acordo com a natureza do sistema físico considerado. No caso de um espaço contínuo,
+por exemplo, posição $x$ ou momento $p$ de uma partícula, onde o número de 
+alternativas é infinito e não enumerável, é conhecido como \textbf{espaço de Hilbert}.
+
+Na mecânica quântica, um estado físico é representado por um \textbf{vetor de estado}
+$\ket{\alpha}$ em um espaço vetorial complexo.  
+
+\begin{definition}[Vetor de estado]
+    Um estado físico será representado por um vetor de estado em um espaço 
+    vetorial complexo, representado por \( \ket{\alpha } \).
+\end{definition}
+
+Toda vez que aparecer um \( \ket{\alpha } \) será um estado genérico.
+Na notação de Schrödinger, ele representa a função de onde \( \psi (x) \).
+
+\begin{postulate}
+    Esse \textit{ket} de estado contém toda a informação sobre o sistema físico que ele
+    representa.
+\end{postulate}
+
+Observe o quão difícil é encontrar essa função de onda, porque toda informação 
+sobre o sistema, está contida nele (energia, momento de dipolo etc). Existem
+problemas que, com o formalismo de Hisenberg, será mais fácil de calcular do 
+usando o formalismo de Schrödinger.
+
+A soma de vetores de um mesmo espaço resulta em outro vetor nesse mesmo 
+espaço.
+
+\begin{observacao}
+    Neste espacho \( \ket{\alpha }+\ket{\beta }=\ket{\gamma } \), esta operação 
+    está intimamente relacionada ao \textbf{príncipio da superposição} de estados
+    e \( \gamma  \) se encontra no mesmo espaço.
+\end{observacao}
+
+\begin{observacao}
+    Podemos também multiplicar este vetor de estado por uma constante pertencente
+    aos números complexos, \( \text{c}  \in \C \), podendo ser \( \text{c}\ket{\alpha }
+    = \ket{c}\text{c}\). Sendo o \textit{ket} nulo o caso em que \( \text{c} = 0 \). 
+\end{observacao}
+
+\[
+    \text{ Para c} = 0, \text{c}\ket{\alpha } \to \ket{\alpha } = 0
+.\] 
+
+\begin{postulate}
+    \( \ket{\alpha } \) e \( \text{c}\ket{\alpha } \), para \( \text{c} \neq 0 \),
+    representam o mesmo estado físico.
+\end{postulate}
+
+\begin{definition}
+    Os observáveis físicos serão representados por um \textbf{operador linear
+    hermitiano} nesse espaço.
+    Tal operador, na notação de Dirac, será representado por uma matriz e atuará
+    sempre no \textit{ket} pela direita.
+\end{definition}
+
+Qualquer coisa que se possa medir será um operador e ele atua modificando o vetor
+
+\begin{equation}
+	\mathcal{O}\ket{\alpha} = \ket{\beta}.
+\end{equation}
+
+\begin{observacao}
+    A operação inversa, \( \ket{\alpha } \mathcal{O} \), não está definida e 
+    não tem sentido.
+\end{observacao}
+
+\begin{definition}
+    Os autokets de \( \mathcal{O} \), por analogia, são autovetores.
+\end{definition}
+
+Para um operador $\mathcal{O}$, existe um conjunto de vetores $\ket{\alpha'}$, 
+nas quais o operador não muda a direção deles, só muda o tamanho. Nesse caso, 
+há a relação de \textbf{autovalor} e \textbf{autovetor}. O estado físico que 
+corresponde a um autovetor é chamado de \textbf{autoestado}
+
+\begin{equation}
+	\mathcal{O}\ket{\alpha'} = \alpha'\ket{\alpha'}, \; \mathcal{O}\ket{\alpha''} = \alpha''\ket{\alpha''}, ...
+\end{equation}
+
+\begin{definition}
+    Um estado físico corespondente a um autoket de \( \mathcal{O} \) é chamado de 
+    autoestado de \( \mathcal{O} \).
+\end{definition}
+
+
+Exemplo: No experimento de Stern-Gerlach, \( \ket{S_z;+} \) e \( \ket{S_z;-} \) são 
+os autoestados de \( S_z \), com os autovalores \( + \frac{\hbar}{2} \) e 
+\( -\frac{\hbar}{2} \).
+
+\textbf{Qual a relação entre \( \ket{\alpha } \) e \( \ket{\alpha '} \)?} Será 
+uma relação de completeza!
+
+\begin{definition}
+    Em um espaço de dimensão \( n \), os autokets de um operador \( \mathcal{O} \)
+    formam uma base. Dessa forma,
+    \begin{equation}
+        \ket \alpha = \sum_{a'}c_{a'}\ket{a'}
+    \end{equation}
+    onde os \( \{a'\} \) são números complexos.
+\end{definition}
+
+A dimensionalidade do espaço vetorial é determinada pelo número de alternativas 
+realizáveis em um experimento do tipo Stern-Gerlach, ou seja, o espaço vetorial 
+será \textit{N}-dimensional gerado pelos \textit{N} autovetores do operador 
+$\mathcal{O}$.
+
+\subsection{O espaço dual dos Bras}
+
+A álgebra linear define o espaço dual \(\bm{V^*}\) de um espaço vetorial 
+\( \bm{N}  \) sobre um corpo \( \bm{F}  \) como um conjunto de todas as 
+funções lineares
+
+\[
+    f: \bm{V^*} \to \bm{F}
+.\] 
+
+Ou seja, o \textit{bra} é uma função linear que pega o vetor \( \bm{V}  \) e 
+transforma em um número complexo \( \braket{x|x} \) (bracket).
+
+\begin{postulate}
+    Para todo \( \ket{\alpha } \) em \( \mathcal{H} \) (espacho de Hilbert) 
+    existe um \( \bra{\alpha } \) em \( \mathcal{H}^* \).
+\end{postulate}
+
+O espaço de bras é um espaço vetorial ``dual" ao espaço dos kets, ou 
+seja, para cada $\ket \alpha$ existe um $\bra \alpha$, nesse espaço dual. O 
+espaço de bras é gerado pelos autovetores $\{\bra {\alpha'}\}$, que correspondem 
+aos autovetores $\{\ket {\alpha'}\}$. Há uma correspondência unívoca
+
+\[
+    \ket \alpha \leftrightarrow \bra \alpha 
+\] 
+
+\[
+	\ket \alpha + \ket \beta \leftrightarrow \bra \alpha + \bra \beta.
+\] 
+
+Postula-se que o dual do complexo será o seu conjugado, ou seja,
+
+\[
+	c^*\ket \alpha + c^*\ket \beta \leftrightarrow c^*\bra \alpha + c^*\bra \beta.
+\] 
+
+Define-se o \textbf{produto interno} ou \textbf{produto escalar} entre um bra e 
+um ket, $\braket{\beta|\alpha}$. Esse produto em geral é um número complexo.
+
+\[
+    \ket \beta : \mathcal{H} \in \C \longrightarrow \bra \beta  \in \mathcal{H}^*
+\] 
+
+\[
+    \bra \beta (\ket \alpha ) \in \C \longrightarrow \braket{\beta | \alpha} 
+\] 
+
+\begin{postulate}[Métrica hermitiana]
+    \[
+        \braket{\beta|\alpha} = \braket{\alpha|\beta}^*
+    \]
+    Isso é verade pois pertence aos complexos. Por consequência
+    se \( \braket{\alpha  | \alpha } = \braket{\alpha  | \alpha }^* \in \R \).
+\end{postulate}
+
+\begin{postulate}
+    \[
+        \braket{\alpha | \beta } \ge 0
+    .\] 
+    A métrica é positiva e definida.
+\end{postulate}
+
+Esse postulado é essencial para a interpretação estatística, em termos de 
+probabilidades, da mecânica quântica.
+
+Diz-se que $\braket{\beta|\alpha}$ e $\braket{\alpha|\beta}$ são o complexos 
+conjugados um do outro. Observe que esse produto é diferente do \textbf{produto escalar} 
+$(\mathbf{a} \cdot \mathbf{b})$, pois esses são reais.
+
+\begin{postulate}
+    Dois kets $\ket \alpha$ e $\ket \beta$ são ditos \textbf{ortogonais}, se
+    \(
+        \braket{\alpha|\beta} = 0
+    \).  
+\end{postulate}
+

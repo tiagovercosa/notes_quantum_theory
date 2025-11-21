@@ -1,0 +1,100 @@
+\lecture{03}{25 ago 25}{Formalismo Matemático}
+\subsection{Operadores}
+
+Os operadores são a representação dos observáveis, como, o momento e as componentes
+do spin e podem atuar sobre os \textit{kets}. Os operadores \( X, \; Y \) levam os vetores de um espaço de Hilbert para outro
+espaço de Hilbert.
+\[
+  X, \; Y \ldots \longrightarrow \mathcal{H} \rightarrow \mathcal{H}
+.\] 
+
+Dois operadores são iguais se o \( X \ket \alpha = Y \ket \alpha \) para um \textit{ket} 
+arbitrário \( \ket{\alpha} \). O operador nulo satisfaz a \( X \ket{\alpha} = \ket{0} \forall
+\ket{\alpha}\). Trabalharemos com operadores lineares:
+\begin{itemize}
+  \item \( X + Y = Y + X \);
+  \item \( X + (Y + Z) = (X+Y)+Z \);
+  \item \( X(C_\alpha \ket{\alpha} + C_\beta \ket{\beta}) = C_\alpha X \ket{\alpha} + C_\beta X \ket{\beta}\),
+    sendo \( C_\alpha, \; C_\beta \in \C \).
+\end{itemize}
+
+Quando estamos nos espaços dos \textit{bras}, os operadores atuam sempre pela direita,
+\[
+  (\bra{\alpha})X = \bra \alpha X
+.\] 
+O símbolo \( X \bra{\alpha} \) não tem sentido! \textbf{Portanto essa operação está errada}
+\[
+  \ket{\alpha} X \leftrightarrow  X \bra \alpha
+.\] 
+
+\subsubsection{Multiplicação de Operadores}
+
+A multiplicação de operadores de um modo geral \( XY \neq YX \). Os operadores
+da física tinha a característica da anticomutação, ou seja, o produto entre eles
+não comutava.
+\[
+  (XY) \ket{\alpha} = X(Y \ket{\alpha}) = XY \ket{\alpha}
+.\] 
+Tem-se também as propriedades de associação, onde
+\[
+  X(YZ) = (XY)Z = ZYX
+.\] 
+Quando vamos aplicar no \textit{bra}, tem-se
+\[
+  \bra \beta \left(XY\right) = \left(\bra \beta X\right)Y = \bra \beta XY
+.\] 
+Como podemos mostrar que a relação do dual conjugado, \( XY = Y^\dag X^\dag\), é verdadeiro?
+
+demonstração:
+\[
+  XY \ket \alpha = X \ket \beta
+\]
+\[
+  X \ket \beta \leftrightarrow  \bra \beta X^\dag
+.\] 
+\[
+  \ket \beta =Y \ket  \alpha \leftrightarrow \bra \alpha Y^\dag = \bra \beta 
+.\] 
+\[
+  XY \ket  \alpha \leftrightarrow \bra \alpha Y^\dag X^\dag 
+.\] 
+
+\subsubsection{Produto Externo}
+
+O produtor externo é um operador, ele pega um vetor do espaço de Hilbert e leva 
+para outro espaço de Hilbert (\( \mathcal{H} \))
+\[
+  \ket  \beta \bra \alpha 
+\] 
+como essa operação, \( \braket{\alpha  | \gamma } \), é um número, tem-se
+\[
+  \ket  \beta \braket{\alpha  | \gamma } = \braket{\alpha  | \beta } \ket  \beta 
+.\] 
+
+Quem é o conjugado dual do operador\( \ket{\beta }\bra{\alpha } \)?
+
+Demonstração:
+\[
+  \braket{\alpha  | \gamma } \ket \beta = \ket  \beta \braket{\alpha  | \gamma }
+\] 
+Sendo,
+\[
+  (\ket \beta \braket{\alpha  | \gamma })^\dag = \bra \beta \braket{\gamma  | \alpha } = 
+\braket{\gamma  | \alpha } \bra \beta 
+\], portanto
+
+\[
+  \ket \beta \braket{\alpha  | \gamma } \leftrightarrow \braket{\gamma  | \alpha } \bra \beta 
+\] 
+\[
+  X \ket \gamma \leftrightarrow \bra \gamma X^\dag 
+.\] 
+
+\begin{eqnarray}
+  &X = \ket{\alpha }\bra{\beta } \\
+  &X^\dag = \ket{\beta }\bra{\alpha }
+\end{eqnarray}
+
+\subsubsection{Axioma da Associatividade}
+
+
